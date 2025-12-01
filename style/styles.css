@@ -1,0 +1,205 @@
+:root{
+		--cream:#f6efe9;
+		--brown:#a15e3f;
+		--accent:#e7d6cc;
+		--muted:#8d7a6b;
+		--sponsor-size:64px;
+		}
+		html,body{height:100vh; overflow:hidden;} /* scroll lock enabled */
+		body{
+			margin: 0;
+			font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+			/* page background: image + light overlay for legibility */
+			background:
+				linear-gradient(rgba(246,239,233,0.82), rgba(246,239,233,0.82)),
+				url("assets/friends-enjoying-coffee-together-Photoroom 1.png") center/cover no-repeat fixed;
+			color:#111;
+			-webkit-font-smoothing:antialiased;
+			-moz-osx-font-smoothing:grayscale;
+			position:relative;
+			height:100vh;
+			
+		
+		}
+		.nav{
+			position:fixed;
+			top:18px;
+			left:50%;
+			transform:translateX(-50%);
+			z-index:40;
+			display:flex;
+			gap:18px;
+			background:rgba(255,255,255,0.9);
+			padding:10px 26px;
+			border-radius:28px;
+			box-shadow:0 6px 20px rgba(0,0,0,0.06);
+			font-size:14px;
+		}
+		/* make logo part of page flow so it scrolls with content */
+		.logo{
+			position:relative;
+			top:0;
+			left:0;
+			display:flex;
+			align-items:center;
+			gap:8px;
+			z-index:50;
+			margin:12px 0 0 18px; /* keep similar spacing to previous placement */
+		}
+		.logo .mark{
+			width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#6b3f2a,#d69a6a);display:inline-block;
+			box-shadow:0 3px 8px rgba(107,63,42,0.25);
+		}
+		.logo .title{font-weight:600;font-family:'Russo One',sans-serif;color:#0c0c0c;letter-spacing:0.4px}
+
+		.hero{
+			min-height:100vh; /* allow hero to grow while keeping full-viewport minimum */
+			display:flex;
+			align-items:center;
+			padding:96px 6vw;
+			gap:36px;
+			position:relative;
+			overflow:hidden;
+		}
+		.hero-grid{display:grid;grid-template-columns:1fr 480px;gap:32px;width:100%;align-items:center; font-family: 'Quantico', 'Staatliches', 'Russo One', sans-serif;}
+		.left{
+			max-width:720px;
+			position:relative; /* container for title-bean */
+		}
+		.big-title{
+			font-family:'Quantico','Staatliches','Russo One',sans-serif;
+			font-size:86px;
+			color:var(--brown);
+			line-height:0.9;
+			margin:0 0 18px 0;
+			letter-spacing:2px;
+			text-wrap:balance;
+			font-weight:700; /* default bold for headline */
+			position:relative;z-index:2;
+		}
+
+		.title-bean{
+			position:absolute;
+			left:-40px;
+			top:-30px;
+			width:300px;
+			opacity:0.18;
+			filter:grayscale(20%);
+			pointer-events:none;
+			z-index:1;
+		}
+
+/* angkat elemen-elemen di sisi kiri sedikit */
+.left .big-title,
+.left .title-bean,
+.left .quote,
+.left .author,
+.left .cta,
+.left .features {
+    transform: translateY(-170px);
+}
+		/* helpers to switch heading weights/styles if needed */
+		.big-title.regular{font-weight:400}
+		.big-title.italic{font-style:italic;font-weight:400}
+		.big-title span{display:block}
+		.quote{
+			margin:18px 0 26px 0;
+			color:#000;
+			font-style:italic;
+			font-weight:300;
+		}
+		.quote span{display:block}
+		/* target the last span inside .quote (author) and align it to the right */
+		.author{color:#000;font-weight:600;display:block;width:100%;text-align:center;margin-top:8px;padding-right:48px}
+		.cta{display:inline-block;padding:14px 28px;background:white;border-radius:28px;color:var(--brown);font-weight:600;box-shadow:0 6px 20px rgba(161,94,63,0.14);text-decoration:none}
+
+		.features{display:flex;gap:18px;margin-top:28px;color:#b67f61;font-weight:600}
+		.features span{display:inline-flex;align-items:center;gap:8px;font-style:italic}
+
+		.right{
+			position:relative;display:flex;justify-content:center;align-items:flex-end;
+		}
+		.hero-image{
+			width:100%;max-width:480px;border-radius:18px;object-fit:cover;box-shadow:0 20px 60px rgba(0,0,0,0.12);
+			transform:translateY(20px);
+			background:#fff;
+		}
+
+		.sponsors{
+			/* make sponsors fixed so they remain visible and centered with the navbar */
+			position:fixed;
+			display:flex;
+			justify-content:center;
+			gap:40px; /* spacing between sponsor circles */
+			align-items:center;
+			flex-wrap:wrap;
+			z-index:220; /* increased so sponsors overlay footer and nav */
+			padding:12px 8px;
+			width:50%;
+			max-width:900px; /* limit bar width */
+			left:50%;
+			transform:translateX(-50%);
+			bottom:70px; /* more space between sponsors and footer */
+			height: var(--sponsor-size); 
+			
+		}
+		.sponsor{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:white;box-shadow:0 6px 20px rgba(0,0,0,0.06);font-weight:700;margin:0 8px}
+
+		@media (max-width:980px){
+			.hero-grid{grid-template-columns:1fr;}
+			.big-title{font-size:56px}
+			.right{justify-content:center}
+			.hero{padding-top:88px}
+			.nav{left:50%;transform:translateX(-50%);} 
+			/* make sponsors tighter on medium screens and reduce bottom spacing */
+			.sponsors{gap:16px; bottom:100px}
+			.sponsor{width:40px;height:40px}
+			.sponsor img{width:30%;height:30%}
+		}
+		@media (max-width:520px){
+			.big-title{font-size:40px}
+			.hero{padding:36px 4vw}
+			/* mobile: smaller sponsors and less bottom spacing so they remain visible */
+			.sponsors{gap:10px; bottom:80px}
+			.sponsor{width:48px;height:48px}
+			.sponsor img{width:66%;height:66%}
+		}
+
+		/* Move inline styles from HTML to CSS for cleaner markup */
+		.logo .mark > div { width:100%; height:100%; }
+		.sponsor img { width:72%; height:72%; display:block; 
+		object-fit: contain;}
+		@media (max-width:520px){
+			:root{ --sponsor-size:10px; }
+		}
+
+
+
+/* ensure sponsors bar is precisely centered with the navbar (viewport center) */
+/* remove duplicate override - centering is handled above */
+
+/* Footer styles */
+.site-footer{
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	height:64px;
+	background: rgba(255,255,255,0.95);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	box-shadow: 0 -6px 24px rgba(0,0,0,0.06);
+	z-index:30;
+}
+
+/* ===== Login / Auth page styles ===== */
+.auth-page{ }
+.site-footer .footer-inner{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.site-footer .footer-brand{font-weight:700;color:var(--brown);font-family:'Russo One',sans-serif}
+.site-footer .footer-copy{color:#8d7a6b;font-size:13px}
+
+@media (max-width:520px){
+	.site-footer{height:56px}
+	.site-footer .footer-inner{padding:0 12px}
+}

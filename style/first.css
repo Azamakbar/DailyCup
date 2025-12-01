@@ -1,0 +1,41 @@
+/* Styles for first.html hero / quotes layout */
+:root{ --cream:#f6efe9; --brown:#b77960; --muted:rgba(255,255,255,0.85) }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;background:#000;color:var(--cream)}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("assets/home/orangngopi_bg.png") center/cover no-repeat fixed;
+  padding:48px 20px;
+}
+
+.container{max-width:980px;width:100%;text-align:center;position:relative}
+.stars{color:#ffd24d;font-size:35px;letter-spacing:4px;margin-bottom:10px}
+.title{font-family:'Quantico',sans-serif;font-size:28px;margin:6px 0 28px;color:var(--cream)}
+.title .accent{color:var(--brown)}
+
+.cup{margin:0 auto 18px}
+.cup img{width:140px;height:auto;display:block;margin:0 auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.6));}
+
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.quotes blockquote{margin:0;padding:12px 18px;font-style:italic;color:var(--muted);font-size:14px;position:relative}
+.quotes blockquote footer{display:block;text-align:right;margin-top:8px;font-weight:700;color:var(--cream);font-size:13px}
+
+/* position some quotes visually to match mockup feel */
+.quotes blockquote:nth-child(1){transform:translateY(-8px)}
+.quotes blockquote:nth-child(2){transform:translateY(-8px)}
+.quotes blockquote:nth-child(3){transform:translateY(6px)}
+.quotes blockquote:nth-child(4){transform:translateY(6px)}
+.quotes blockquote:nth-child(5){transform:translateY(10px)}
+.quotes blockquote:nth-child(6){transform:translateY(10px)}
+
+@media (max-width:820px){
+  .quotes{grid-template-columns:1fr;gap:14px}
+  .title{font-size:24px}
+  .cup img{width:110px}
+}
