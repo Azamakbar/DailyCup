@@ -10,7 +10,7 @@ body{margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;background:#
   justify-content:center;
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("assets/home/orangngopi_bg.png") center/cover no-repeat fixed;
+    url("../assets/home/orangngopi2.png") center 62%/cover no-repeat fixed;
 }
 
 .login-form-wrap{

@@ -11,7 +11,7 @@ body{margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;background:#
   justify-content:center;
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("assets/home/orangngopi_bg.png") center/cover no-repeat fixed;
+    url("../assets/home/orangngopi.png") center/cover no-repeat fixed;
 }
 
 .signup-wrap{ width:560px; max-width:92%; color:var(--cream); text-align:center; position:relative }
