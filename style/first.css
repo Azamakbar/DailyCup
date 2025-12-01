@@ -42,7 +42,7 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,A
   .cup img{width:110px}
 }
 
-/* decorative splash image in bottom-left */
+/* gambar dekorasi percikan di kiri bawah */
 .splash{
   position:absolute;
   left:0;
@@ -59,7 +59,7 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,A
   .splash{width:180px;max-width:40%;transform:translateX(-10%)}
 }
 
-/* right-bottom decorative splash */
+/* gambar dekorasi percikan di kanan bawah */
 .splash-right{
   position:absolute;
   right:0;
